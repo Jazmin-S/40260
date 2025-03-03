@@ -4,3 +4,6 @@
 [submodule "Poma"]
 	path = Poma
 	url = https://github.com/Jazmin-S/Poma.git
+[submodule "Ecomerce"]
+	path = Ecomerce
+	url = https://github.com/Jazmin-S/Ecomerce.git
