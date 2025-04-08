@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE alumnos SYSTEM "alumnos.dtd">
+<alumnos>
+  <alumno>
+    <nombre>Eros</nombre>
+    <nacimiento>2000-04-12</nacimiento>
+  </alumno>
+  <alumno>
+    <nombre>Mikasa</nombre>
+    <nacimiento>2001-05-25</nacimiento>
+  </alumno>
+  <alumno >
+    <nombre>Armin</nombre>
+    <nacimiento>1980-12-11</nacimiento>
+  </alumno>
+  <alumno>
+    <nombre>Levi</nombre>
+    <nacimiento>1888-11-19</nacimiento>
+  </alumno>
+</alumnos>
