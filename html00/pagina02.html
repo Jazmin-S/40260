@@ -1,17 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pagina 01</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pagina 01</title>
 </head>
-
 <body>
 
-    <button onclick="loadXMLDoc()">Ejecutar función</button>
-    <table id="demo"></table>
+  <button onclick="loadXMLDoc()">Ejecutar función</button>
+  <table id="demo"></table>
 
-<script>
+  <script>
     // Función principal usando async/await y fetch
     const loadXMLDoc = async () => {
       try {
@@ -31,13 +30,11 @@
       Array.from(cds).forEach(cd => {
         const artist = cd.getElementsByTagName("ARTIST")[0]?.textContent || "N/A";
         const title = cd.getElementsByTagName("TITLE")[0]?.textContent || "N/A";
-        table += <tr><td>${artist}</td><td>${title}</td></tr>;
+        table += `<tr><td>${artist}</td><td>${title}</td></tr>`;
       });
       document.getElementById("demo").innerHTML = table;
     };
-    </script>
-    
-</body>
-</html>
+  </script>
+
 </body>
 </html>
