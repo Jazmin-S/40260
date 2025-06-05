@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button aria-label="Cancelar">x</button>
+    <label for="U">Nombre de usuario:</label>
+    <input type = "text" id ="u" aria-describedby="i">
+    <p id = "i">El campo debe tener 6 caracteres alfanuméricos</p> 
+    
+
+    <button aria-expanded="false" aria-controls="c" id="menu"> Menu </button>
+    <nav id ="c" hidden>
+        <ul>
+            <li><a href="">Inicio</a></li>
+            <li><a href="">Productos</a></li>
+            <li><a href="">Servicios</a></li>
+        </ul>
+    </nav>
+
+    <div role="tablist">
+        <button id="tab-1" role="tab" aria-selected="true" aria-controls="panel-1" title="Pestaña 1 imagen1"> Pestaña 1</button>
+        <button id="tab-2" role="tab" aria-selected="false" aria-controls="panel-2"> Pestaña 2</button>
+    </div>
+
+    <div id="panel-1" role="tabpanel" aria-labelledby="tab-1">
+        <fieldset>
+
+            Contenido de la pestaña 1
+            <img src="https://picsum.photos/id/1/100/100" alt="" srcset="">
+        
+        </fieldset>
+    </div>
+
+    <div id="panel-2" role="tabpanel" aria-labelledby="tab-2" hidden>
+        <fieldset>
+
+            Contenido de la pestaña 2
+            <img src="https://picsum.photos/id/1/100/100" alt="" srcset="">
+        
+        </fieldset>
+    </div>
+
+
+    <!-- <script>
+        const menu=document.getElementById("menu")
+        menu.addEventListener("click",()=>{
+            let enlaces=document.getElementById("c")
+            console.log(enlaces.getAttribute("hidden"))
+
+            if (enlaces.getAttribute("hidden")=="")
+                enlaces.removeAttribute("hidden")
+            else
+                enlaces.setAttribute("hidden","")
+            //enlaces.setAttribute("hidden",false)
+            //enlaces.removeAttribute("hidden")
+        })
+
+    </script> -->
+
+    <!-- <script>
+        const menu=document.getElementById("menu")
+        menu.addEventListener("click",()=>{
+            let enlaces = document.getElementById("c")
+            console.log(enlaces.getAttribute("hidden"))
+            //busca en la coleccion si existe el atributo
+            if (enlaces.getAttributeNames().includes("hidden"))
+             enlaces.removeAttribute("hidden")
+
+            else
+                enlaces.setAttribute("hidden","")
+            //enlaces.setAttribute("hidden",false)
+            //enlaces.removeAttribute("hidden")
+        })
+
+    </script> -->
+
+    <script>
+        const menu=document.getElementById("menu")
+        menu.addEventListener("click",()=>{
+            let enlaces = document.getElementById("c")
+            console.log(enlaces.getAttribute("hidden"))
+            //busca en la coleccion si existe el atributo
+            if (enlaces.getAttributeNames().includes("hidden")){
+                enlaces.removeAttribute("hidden")
+                menu.setAttribute("aria-expanded","true")
+            }
+            else{
+                enlaces.setAttribute("hidden","")
+                menu.setAttribute("aria-expanded","false")
+            //enlaces.setAttribute("hidden",false)
+            //enlaces.removeAttribute("hidden")
+            }
+        })
+
+    </script>
+    <script>
+    const tabs = document.querySelectorAll('[role="tab"]');
+    const paneles = document.querySelectorAll('[role="tabpanel"]');
+
+    tabs.forEach(element => {
+        element.addEventListener("click", () => {
+            tabs.forEach(t => {
+                t.setAttribute('aria-selected', 'false');
+            });
+                paneles.forEach(p => {
+                p.setAttribute('hidden', '');
+            });
+
+            element.setAttribute('aria-selected', 'true');
+            const panelId = element.getAttribute('aria-controls');
+            document.getElementById(panelId).removeAttribute('hidden');
+        });
+    });
+</script>
+
+</body>
+</html>
