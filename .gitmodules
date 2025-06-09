@@ -7,3 +7,6 @@
 [submodule "Ecomerce"]
 	path = Ecomerce
 	url = https://github.com/Jazmin-S/Ecomerce.git
+[submodule "ordinario-ftw"]
+	path = ordinario-ftw
+	url = https://github.com/Jazmin-S/ordinario-ftw.git
